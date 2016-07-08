@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var originTextField: UITextField!
     @IBOutlet weak var destinationTextField: UITextField!
@@ -132,15 +132,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // 更新結果
         displayResult()
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations")
-        
-        // 停止locationManager的地點更新
-        manager.stopUpdatingLocation()
-        
-        print("\(locations)")
     }
     
     // 查詢起點和目的地的地點
