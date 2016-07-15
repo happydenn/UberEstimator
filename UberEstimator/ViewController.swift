@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultView: UIView!
     @IBOutlet weak var surgeView: UIView!
     
+    @IBOutlet weak var resultHeightConstraint: NSLayoutConstraint!
+    
     let minFare = 50.0
     let startPrice = 30.0
     let perMinutePrice = 2.0
@@ -59,8 +61,9 @@ class ViewController: UIViewController {
         
         // 將一些View在View Controller一開始時隱藏
         loadingView.hidden = true
-        resultView.hidden = true
         surgeView.hidden = true
+        resultView.hidden = true
+        resultHeightConstraint.priority = 900
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -98,6 +101,7 @@ class ViewController: UIViewController {
         
         // 將結果和加成slider隱藏
         resultView.hidden = true
+        resultHeightConstraint.priority = 900
         surgeView.hidden = true
     }
     
@@ -117,6 +121,7 @@ class ViewController: UIViewController {
         
         // 將結果和加成slider隱藏
         resultView.hidden = true
+        resultHeightConstraint.priority = 900
         surgeView.hidden = true
         
         // 把輸入設定到起點的框框
@@ -319,6 +324,7 @@ class ViewController: UIViewController {
         
         // 將結果和加成slider顯示
         resultView.hidden = false
+        resultHeightConstraint.priority = 1
         surgeView.hidden = false
     }
     
